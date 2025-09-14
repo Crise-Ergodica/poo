@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança em POO - Aurora Drumond</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Fundo preto */
+            color: #f8f8f8; /* Texto branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide-container {
+            max-width: 960px;
+            padding: 2.5rem;
+            background-color: #1e1e1e; /* Fundo do slide cinza escuro */
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+            width: 100%;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        h1, h2, h3 {
+            color: #f8f8f8; /* Branco para títulos */
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        code {
+            font-family: monospace;
+            background-color: #333;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.375rem;
+            color: #fff; /* Branco para código */
+        }
+        pre {
+            background-color: #000;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+        }
+        .glossary {
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
+        }
+        .glossary p {
+            margin-bottom: 0.5rem;
+        }
+        .glossary strong {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="slide-container">
+        <h1 class="text-center font-bold mb-4">Herança em Programação Orientada a Objetos (POO)</h1>
+        <p class="text-center text-sm italic mb-8">Criado por: Aurora Drumond</p>
+
+        <!-- Seção 1: O Conceito -->
+        <div class="section">
+            <h2 class="font-semibold mb-2">O que é Herança?</h2>
+            <p>
+                Imagine que você tem uma receita de bolo de chocolate. Para fazer um bolo de cenoura, você não precisa começar do zero! Você "herda" a base da receita (misturar os ingredientes, assar, etc.) e apenas adiciona os detalhes específicos do bolo de cenoura (a cenoura, a cobertura, etc.).
+            </p>
+            <p>
+                Na programação, a <strong>herança</strong> é a mesma coisa. É um conceito que nos permite criar uma classe "filha" que reaproveita as propriedades e comportamentos de uma classe "mãe". A classe filha pode ter suas próprias características, mas ela já começa com tudo o que a classe mãe tem.
+            </p>
+            <p>
+                Isso nos ajuda a evitar a repetição de código e a organizar nossas classes de forma mais lógica, seguindo uma hierarquia do "geral" para o "específico". Pense assim: um Cachorro <strong>é um</strong> Animal.
+            </p>
+        </div>
+
+        <!-- Seção 2: Exemplos Práticos -->
+        <div class="section">
+            <h2 class="font-semibold mb-2">Exemplos</h2>
+
+            <!-- Exemplo 1: Animais -->
+            <div class="mb-6">
+                <h3 class="font-medium">Exemplo 1: Animais</h3>
+                <p>Aqui, <code>Cachorro</code> é uma classe filha que herda da classe mãe <code>Animal</code>. O cachorro já "nasce sabendo" de tudo que um animal sabe (como comer) e ainda tem suas próprias habilidades (como latir).</p>
+                <pre><code class="language-php">&lt;?php
+
+class Animal {
+  public $nome;
+  
+  public function __construct($nome) {
+    $this->nome = $nome;
+  }
+  
+  public function comer() {
+    echo $this->nome . " está comendo." . PHP_EOL;
+  }
+}
+
+class Cachorro extends Animal {
+  public function __construct($nome) {
+    parent::__construct($nome);
+  }
+  
+  public function latir() {
+    echo "Au Au!" . PHP_EOL;
+  }
+}
+
+$meuCachorro = new Cachorro("Rex");
+$meuCachorro->comer(); // Saída: Rex está comendo.
+$meuCachorro->latir(); // Saída: Au Au!
+
+?&gt;</code></pre>
+
+                <div class="glossary">
+                    <h4 class="text-lg font-bold mb-2">Glossário de Termos</h4>
+                    <p><strong><code>class Animal</code></strong>: Palavra-chave que define a classe principal, ou "classe mãe".</p>
+                    <p><strong><code>public $nome</code></strong>: Declara uma propriedade chamada <code>nome</code>. O <code>public</code> significa que ela pode ser acessada de qualquer lugar.</p>
+                    <p><strong><code>public function __construct($nome)</code></strong>: É o método construtor. É chamado automaticamente quando um novo objeto é criado e serve para inicializar as propriedades, como o <code>nome</code> do animal.</p>
+                    <p><strong><code>$this->nome</code></strong>: Refere-se à propriedade <code>nome</code> do objeto que está sendo usado no momento.</p>
+                    <p><strong><code>class Cachorro extends Animal</code></strong>: Palavra-chave <code>extends</code> indica que a classe <code>Cachorro</code> está herdando as propriedades e métodos da classe <code>Animal</code>.</p>
+                    <p><strong><code>parent::__construct($nome)</code></strong>: Chama o construtor da classe pai (<code>Animal</code>) para que ela possa fazer sua própria inicialização, passando o <code>nome</code> para ela.</p>
+                </div>
+            </div>
+
+            <!-- Exemplo 2: Veículos -->
+            <div>
+                <h3 class="font-medium">Exemplo 2: Veículos</h3>
+                <p>A classe <code>Carro</code> herda de <code>Veiculo</code>. Ela pega as características básicas (como marca e modelo) e adiciona um detalhe extra (o número de portas).</p>
+                <pre><code class="language-php">&lt;?php
+
+class Veiculo {
+  public $marca;
+  public $modelo;
+  
+  public function __construct($marca, $modelo) {
+    $this->marca = $marca;
+    $this->modelo = $modelo;
+  }
+  
+  public function acelerar() {
+    echo $this->marca . " " . $this->modelo . " está acelerando." . PHP_EOL;
+  }
+}
+
+class Carro extends Veiculo {
+  public $portas;
+  
+  public function __construct($marca, $modelo, $portas) {
+    parent::__construct($marca, $modelo);
+    $this->portas = $portas;
+  }
+}
+
+$meuCarro = new Carro("Ford", "Ka", 4);
+$meuCarro->acelerar(); // Saída: Ford Ka está acelerando.
+echo "Número de portas: " . $meuCarro->portas . PHP_EOL; // Saída: Número de portas: 4
+
+?&gt;</code></pre>
+
+                <div class="glossary">
+                    <h4 class="text-lg font-bold mb-2">Glossário de Termos</h4>
+                    <p><strong><code>class Veiculo</code></strong>: Define a classe principal, a "classe mãe".</p>
+                    <p><strong><code>public $marca; public $modelo;</code></strong>: Propriedades da classe, acessíveis de qualquer lugar.</p>
+                    <p><strong><code>public function __construct($marca, $modelo)</code></strong>: O construtor que recebe e inicializa a <code>marca</code> e o <code>modelo</code>.</p>
+                    <p><strong><code>class Carro extends Veiculo</code></strong>: Palavra-chave <code>extends</code> indica que a classe <code>Carro</code> herda de <code>Veiculo</code>.</p>
+                    <p><strong><code>public $portas</code></strong>: Uma propriedade exclusiva da classe <code>Carro</code>.</p>
+                    <p><strong><code>parent::__construct($marca, $modelo)</code></strong>: Chama o construtor da classe pai para inicializar as propriedades que foram herdadas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção 3: O Desafio -->
+        <div class="section">
+            <h2 class="font-semibold mb-2">Desafio para Você!</h2>
+            <p>Agora é sua vez de praticar! Usando o conceito de herança, crie uma nova classe chamada <code>Gato</code> que herde da classe <code>Animal</code>. Além de herdar, adicione a ela um método chamado <code>miar()</code>.</p>
+            <pre><code class="language-php">&lt;?php
+
+class Gato extends Animal {
+  // O que você vai colocar aqui?
+}
+
+?&gt;</code></pre>
+        </div>
+
+        <p class="text-center mt-8 text-gray-400 italic">Espero que esta introdução ajude a entender como herança funciona! Boa sorte!</p>
+    </div>
+
+</body>
+</html>
