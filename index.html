@@ -77,44 +77,11 @@
         .glossary strong {
             color: #ccc;
         }
-        .challenge-link-button {
-            display: inline-block;
-            background-color: #4CAF50; /* Green */
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 1rem 0;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-        .challenge-link-button:hover {
-            background-color: #45a049;
-        }
-        .back-button {
-            display: inline-block;
-            background-color: #555;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 1rem 0;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-        .back-button:hover {
-            background-color: #777;
-        }
     </style>
 </head>
 <body class="p-8">
 
-    <!-- Seção do slide principal -->
-    <div class="slide-container" id="lesson-section">
+    <div class="slide-container">
         <h1 class="text-center font-bold mb-4">Herança em Programação Orientada a Objetos (POO)</h1>
         <p class="text-center text-sm italic mb-8">Criado por: Aurora Drumond</p>
 
@@ -228,37 +195,14 @@ echo "Número de portas: " . $meuCarro->portas . PHP_EOL; // Saída: Número de 
             </div>
         </div>
 
-        <!-- Seção 3: O Desafio -->
+        <!-- Seção de Desafios -->
         <div class="section">
-            <h2 class="font-semibold mb-2">Desafio para Você!</h2>
-            <p>Agora é sua vez de praticar! Usando o conceito de herança, crie uma nova classe chamada <code>Gato</code> que herde da classe <code>Animal</code>. Além de herdar, adicione a ela um método chamado <code>miar()</code>.</p>
+            <h2 class="font-semibold mb-2">Desafios para Você!</h2>
+            <p>O objetivo é criar uma classe <code>Pessoa</code> e uma classe <code>Programador</code>. A classe <code>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
+            <p>A classe <code>Pessoa</code> deve ter as propriedades <code>nome</code> e <code>idade</code>, e um método para se apresentar. A classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para mostrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
+            <p>Preencha o código abaixo para provar que você domina o conceito de herança em PHP do zero.</p>
+            
             <pre><code class="language-php">&lt;?php
-
-class Gato extends Animal {
-  // O que você vai colocar aqui?
-}
-
-?&gt;</code></pre>
-        </div>
-
-        <div class="text-center mt-8">
-            <a href="javascript:void(0);" onclick="showChallenge()" class="challenge-link-button">Próximo Desafio!</a>
-        </div>
-
-        <p class="text-center mt-8 text-gray-400 italic">Espero que esta introdução ajude a entender como herança funciona! Clique no botão para o desafio final!</p>
-    </div>
-
-    <!-- Seção do Desafio Final -->
-    <div class="slide-container" id="challenge-section" style="display:none;">
-        <h1 classe="texto-centro fonte-negrito mb-4">O Desafio Final</h1>
-        <p classe="text-center text-sm itálico mb-8">Agora é a hora de mostrar o que você precisa.</p>
-
-        <h2 classe="fonte-semibold mb-2">Crie suas aulas prioritárias!</h2>
-        <p>O objetivo é criar uma classe <código>Pessoa</código> e uma classe <código>Programador</código>. . . . Uma classe <código>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
-        <p>Uma classe <código>Pessoa</código> desenvolver como propriedades <código>nome</código> e <código>idade</código>, e um método para se apresentar. Uma classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para maisrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
-        <p>Preencha o código baixo para provar que você domina o conceito de herança em PHP do zero.</p>
-        
-        <pré><código classe="linguagem-php">&lt;?php
 
 // Classe mãe
 classe Pessoa {
@@ -274,25 +218,32 @@ classe Programador estende Pessoa {
 // Chame os métodos para testar seu código
 
 ?&gt;</código></pré>
-
-        <p classe="text-center mt-8 text-gray-400 itálico">Quando terminar, você terá provado que pode escrever código com herança!</p>
-
-        <dividir classe="centro de texto mt-8">
-            <a href="javascript:void(0);" clicar em="mostrarLição()" classe="botão traseiro">Voltar ao slide anterior</a>
         </dividir>
+
+        <!-- Segundo Desafio -->
+        <dividir classe="seção">
+            <h2 classe="fonte-semibold mb-2">Desafio Avançado</h2>
+            <p>
+ Crie uma classe mãe chamada <código>Veículo</código> com as propriedades <código>marca</código> e <código>modelo</código>. . . . . Em seguida, crie duas classes filhas, <code>Carro</code> e <code>Moto</code>, que herdem de <code>Veículo</code>.
+            </p>
+            <p>
+ Uma classe <código>Carro</código> deve ter uma propriedade <código>numeroDePortas</código> e uma classe <código>Moto</código> deve ter uma propriedade <code>cilindradas</code>. Ambas devem herdar o construtor da classe mãe.
+            </p>
+            <p>
+ Em seguida, crie uma instância de <código>Carro</código> e outra de <código>Moto</código> e imprima suas propriedades para testar seu código.
+            </p>
+            
+            <pré><código classe="linguagem-php">&lt;?php
+
+// Sua solução aqui...
+
+?&gt;</código></pré>
+        </dividir>
+
+        <p classe="text-center mt-8 text-gray-400 itálico">Espero que esta introdução ajude a entrar como herança funcional! Agora é só focar no desafio.</p>
+        <p classe="text-center mt-4 text-gray-400 itálico">E-mail da professora: gdcm10@gmail.com</p>
+
     </dividir>
-
-    <roteiro>
- função maisrarDesafio() {
- documento.obterElementoPorId('seção de aula').estilo.exibir = 'nenhum';
- documento.obterElementoPorId('seção de desempenho').estilo.exibir = 'bloco';
-        }
-
- função maisrarLição() {
- documento.obterElementoPorId('seção de aula').estilo.exibir = 'bloco';
- documento.obterElementoPorId('seção de desempenho').estilo.exibir = 'nenhum';
-        }
-    </roteiro>
 
 </corpo>
 </HTML>
