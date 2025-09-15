@@ -1,77 +1,77 @@
 <!DOCTYPE html>
-<HTML língua="pt-br">
-<caboça>
-    <meta conjunto de caracteres="UTF-8">
-    <meta nome="janela de visualização" conteúdo="largura=largura do dispositivo, escala inicial=1,0">
-    <título>Herança em POO - Aurora Drumond</título>
-    <roteiro fonte="https://cdn.tailwindcss.com"></roteiro>
-    <link relação="pré-conexão" href="https://fonts.googleapis.com">
-    <link relação="pré-conexão" href="https://fonts.gstatic.com" origem cruzada>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&exibir=trocarte" relação="folha de estilo">
-    <estilo>
- corpo {
- família de fontes: 'Inter', sem serifa;
- cor de fundo: #121212; /* Fundo preto */
- cor: #f8f8f8; /* Texto branco */
- exibir: flexível;
- justificar-conteúdo: centro;
- alinhar itens: centro;
- alta mínima: 100vh;
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança em POO - Aurora Drumond</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Fundo preto */
+            color: #f8f8f8; /* Texto branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
- .destinatário deslizante {
- largura máxima: 960px;
- enchimento: 2,5rem;
- cor de fundo: #1e1e1e; /* Fundo do slide cinza escuro */
- raio de borda: 1,5rem;
- caixa-sombra: 0 10px 15px -3px RGBA(0, 0, 0, 0,2), 0 4px 6px -2px RGBA(0, 0, 0, 0,1);
- margem: 2rem;
- largura: 100%;
+        .slide-container {
+            max-width: 960px;
+            padding: 2.5rem;
+            background-color: #1e1e1e; /* Fundo do slide cinza escuro */
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+            width: 100%;
         }
- .seção {
- margem inferior: 2,5rem;
+        .section {
+            margin-bottom: 2.5rem;
         }
- h1, h2, h3 {
- cor: #f8f8f8; /* Branco para títulos */
- peso da fonte: 700;
+        h1, h2, h3 {
+            color: #f8f8f8; /* Branco para títulos */
+            font-weight: 700;
         }
- h1 {
- tamanho da fonte: 2,5rem;
- alinhamento de texto: centro;
- margem inferior: 1rem;
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
         }
- h2 {
- tamanho da fonte: 2rem;
- margem inferior: 1rem;
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
- h3 {
- tamanho da fonte: 1,5rem;
- margem inferior: 0,5rem;
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         p {
-            tamanho da fonte: 1rem;
-            altura da linha: 1.6;
-            margem inferior: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
-        código {
-            família de fontes: monoespaçado;
-            cor de fundo: #333;
-            enchimento: 0,15rem 0,4rem;
-            raio de borda: 0,375rem;
-            cor: #fff; /* Branco para código */
+        code {
+            font-family: monospace;
+            background-color: #333;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.375rem;
+            color: #fff; /* Branco para código */
         }
-        pré {
-            cor de fundo: #000;
-            enchimento: 1,5rem;
-            raio de borda: 1rem;
-            transbordamento-x: auto;
+        pre {
+            background-color: #000;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            overflow-x: auto;
         }
-        .glossário {
-            cor de fundo: #2a2a2a;
-            enchimento: 1,5rem;
-            raio de borda: 1rem;
-            margem superior: 1,5rem;
+        .glossary {
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
         }
-        .glossário p {
+        .glossary p {
             margin-bottom: 0.5rem;
         }
         .glossary strong {
@@ -183,47 +183,47 @@ echo "Número de portas: " . $meuCarro->portas . PHP_EOL; // Saída: Número de 
 
 ?&gt;</code></pre>
 
-                <dividir classe="glossário">
+                <!DOCTYPE html>div class="glossário">
                     <h4 classe="texto-lg fonte-negrito mb-2">Glossário de Termos</h4>
-                    <p><forte><código>classe Veículo</código></forte>: Defina uma classe principal, uma "classe mãe".</p>
-                    <p><forte><código>público $marca; público $modelo;</código></forte>: Propriedades da classe, acessíveis de qualquer lugar.</p>
-                    <p><forte><código>função pública __construct($marca, $modelo)</código></forte>: O construtor que recebe e inicializa a <code>marca</code> e o <code>modelo</code>.</p>
-                    <p><forte><código>classe Carro estende Veículo</código></forte>: Palavra-chave <código>Estende</código> indica que a classe <code>Carro</code> herda de <code>Veículo</code>.</p>
-                    <p><forte><código>portas públicas</código></forte>: Uma propriedade exclusiva da classe <código>Carro</código>.</p>
-                    <p><forte><código>pai::__construct($marca, $modelo)</código></forte>: Chama o construtor da classe pai para inicializar as propriedades que foram herdadas.</p>
+                    <caboça><forte><código>classe Veículo</código></forte>: Defina uma classe principal, uma "classe mãe".</p>
+                    <meta><forte><código>público $marca; público $modelo;</código>: Propriedades da classe, acessíveis de qualquer lugar.dep>
+                    <meta><forte><código>função pública __construct($marca, $modelo)</código>: O construtor que recebe e inicializa a "janela de visualização"code>marcaconteúdocode> e o "largura=largura do dispositivo, escala inicial=1,0"code>modelo</forte>: O construtor que recebe e inicializa a </p>
+                    <título><forte><código>classe Carro estende Veículo</código></forte>: Palavra-chave <código>Estende</código> indica que a classe <code>Carro</code> herda de <code>Veículo</code>.</p>
+                    <roteiro><forte><código>portas públicas</código>: Uma propriedade exclusiva da classe "https://cdn.tailwindcss.com"code</forte>: Uma propriedade exclusiva da classe </código>
+                    <link><forte><código>pai::__construct($marca, $modelo)</código>: Chama o construtor da classe pai para inicializar as propriedades que foram herdadas."pré-conexão"p>
                 </dividir>
             </dividir>
         </dividir>
 
-        <!-- Seção de Desafios -->
-        <dividir classe="seção">
-            <h2 classe="fonte-semibold mb-2">Desafios para Você!</h2>
-            <p>O objetivo é criar uma classe <código>Pessoa</código> e uma classe <código>Programador</código>. . . . Uma classe <código>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
-            <p>Uma classe <código>Pessoa</código> desenvolver como propriedades <código>nome</código> e <código>idade</código>, e um método para se apresentar. Uma classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para maisrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
-            <p>Preencha o código baixo para provar que você domina o conceito de herança em PHP do zero.</p>
-            
+ família de fontes: 'Inter', sem serifa;<!-- Seção de Desafios -->
+ cor de fundo: #121212; /* Fundo preto */<dividir classe="seção">
+ cor: #f8f8f8; /* Texto branco */<h2 classe="fonte-semibold mb-2">Desafios para Você!</h2>
+ exibir: flexível;<p>O objetivo é criar uma classe <código>Pessoa</código> e uma classe <código>Programador</código>. . . Uma classe <código>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
+ justificar-conteúdo: centro;<p>Uma classe <código>Pessoa</código> desenvolver como propriedades <código>nome</código> e <código>idade</código>, e um método para se apresentar. Uma classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para maisrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
+ alinhar itens: centro;<p>Preencha o código baixo para provar que você domina o conceito de herança em PHP do zero.</p>
+ alta mínima: 100vh;
             <pré><código classe="linguagem-php">&lt;?php
 
 // Classe mãe
 classe Pessoa {
  // Propriedades e métodos aqui
-}
+ raio de borda: 1,5rem;
 
 // Classe filha que herda de Pessoa
 classe Programador estende Pessoa {
  // Propriedades e métodos aqui
-}
+ .seção {
 
 // Crie uma nova instância de Programador
 // Chame os métodos para testar seu código
 
-?&gt;</código></pré>
+ peso da fonte: 700;&gt;</código></pré>
         </dividir>
 
         <p classe="text-center mt-8 text-gray-400 itálico">Espero que esta introdução ajude a entrar como herança funcional! Agora é só focar no desafio.</p>
         <p classe="text-center mt-4 text-gray-400 itálico">E-mail da professora: gdcm10@gmail.com</p>
 
-    </dividir>
+ </dividir>
 
 </corpo>
-</HTML>
+</html>
