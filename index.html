@@ -183,26 +183,26 @@ echo "Número de portas: " . $meuCarro->portas . PHP_EOL; // Saída: Número de 
 
 ?&gt;</code></pre>
 
-                <div class="glossary">
-                    <h4 class="text-lg font-bold mb-2">Glossário de Termos</h4>
-                    <p><strong><code>class Veiculo</code></strong>: Define a classe principal, a "classe mãe".</p>
-                    <p><strong><code>public $marca; public $modelo;</code></strong>: Propriedades da classe, acessíveis de qualquer lugar.</p>
-                    <p><strong><code>public function __construct($marca, $modelo)</code></strong>: O construtor que recebe e inicializa a <code>marca</code> e o <code>modelo</code>.</p>
-                    <p><strong><code>class Carro extends Veiculo</code></strong>: Palavra-chave <code>extends</code> indica que a classe <code>Carro</code> herda de <code>Veiculo</code>.</p>
-                    <p><strong><code>public $portas</code></strong>: Uma propriedade exclusiva da classe <code>Carro</code>.</p>
-                    <p><strong><code>parent::__construct($marca, $modelo)</code></strong>: Chama o construtor da classe pai para inicializar as propriedades que foram herdadas.</p>
-                </div>
-            </div>
-        </div>
+                <dividir classe="glossário">
+                    <h4 classe="texto-lg fonte-negrito mb-2">Glossário de Termos</h4>
+                    <p><forte><código>classe Veículo</código></forte>: Defina uma classe principal, uma "classe mãe".</p>
+                    <p><forte><código>público $marca; público $modelo;</código></forte>: Propriedades da classe, acessíveis de qualquer lugar.</p>
+                    <p><forte><código>função pública __construct($marca, $modelo)</código></forte>: O construtor que recebe e inicializa a <code>marca</code> e o <code>modelo</code>.</p>
+                    <p><forte><código>classe Carro estende Veículo</código></forte>: Palavra-chave <código>Estende</código> indica que a classe <code>Carro</code> herda de <code>Veículo</code>.</p>
+                    <p><forte><código>portas públicas</código></forte>: Uma propriedade exclusiva da classe <código>Carro</código>.</p>
+                    <p><forte><código>pai::__construct($marca, $modelo)</código></forte>: Chama o construtor da classe pai para inicializar as propriedades que foram herdadas.</p>
+                </dividir>
+            </dividir>
+        </dividir>
 
         <!-- Seção de Desafios -->
-        <div class="section">
-            <h2 class="font-semibold mb-2">Desafios para Você!</h2>
-            <p>O objetivo é criar uma classe <code>Pessoa</code> e uma classe <code>Programador</code>. A classe <code>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
-            <p>A classe <code>Pessoa</code> deve ter as propriedades <code>nome</code> e <code>idade</code>, e um método para se apresentar. A classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para mostrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
-            <p>Preencha o código abaixo para provar que você domina o conceito de herança em PHP do zero.</p>
+        <dividir classe="seção">
+            <h2 classe="fonte-semibold mb-2">Desafios para Você!</h2>
+            <p>O objetivo é criar uma classe <código>Pessoa</código> e uma classe <código>Programador</código>. . . . Uma classe <código>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
+            <p>Uma classe <código>Pessoa</código> desenvolver como propriedades <código>nome</código> e <código>idade</código>, e um método para se apresentar. Uma classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para maisrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
+            <p>Preencha o código baixo para provar que você domina o conceito de herança em PHP do zero.</p>
             
-            <pre><code class="language-php">&lt;?php
+            <pré><código classe="linguagem-php">&lt;?php
 
 // Classe mãe
 classe Pessoa {
@@ -216,26 +216,6 @@ classe Programador estende Pessoa {
 
 // Crie uma nova instância de Programador
 // Chame os métodos para testar seu código
-
-?&gt;</código></pré>
-        </dividir>
-
-        <!-- Segundo Desafio -->
-        <dividir classe="seção">
-            <h2 classe="fonte-semibold mb-2">Desafio Avançado</h2>
-            <p>
- Crie uma classe mãe chamada <código>Veículo</código> com as propriedades <código>marca</código> e <código>modelo</código>. . . . . Em seguida, crie duas classes filhas, <code>Carro</code> e <code>Moto</code>, que herdem de <code>Veículo</code>.
-            </p>
-            <p>
- Uma classe <código>Carro</código> deve ter uma propriedade <código>numeroDePortas</código> e uma classe <código>Moto</código> deve ter uma propriedade <code>cilindradas</code>. Ambas devem herdar o construtor da classe mãe.
-            </p>
-            <p>
- Em seguida, crie uma instância de <código>Carro</código> e outra de <código>Moto</código> e imprima suas propriedades para testar seu código.
-            </p>
-            
-            <pré><código classe="linguagem-php">&lt;?php
-
-// Sua solução aqui...
 
 ?&gt;</código></pré>
         </dividir>
