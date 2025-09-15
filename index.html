@@ -77,11 +77,44 @@
         .glossary strong {
             color: #ccc;
         }
+        .challenge-link-button {
+            display: inline-block;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 1rem 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .challenge-link-button:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            display: inline-block;
+            background-color: #555;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 1rem 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #777;
+        }
     </style>
 </head>
 <body class="p-8">
 
-    <div class="slide-container">
+    <!-- Seção do slide principal -->
+    <div class="slide-container" id="lesson-section">
         <h1 class="text-center font-bold mb-4">Herança em Programação Orientada a Objetos (POO)</h1>
         <p class="text-center text-sm italic mb-8">Criado por: Aurora Drumond</p>
 
@@ -208,8 +241,58 @@ class Gato extends Animal {
 ?&gt;</code></pre>
         </div>
 
-        <p class="text-center mt-8 text-gray-400 italic">Espero que esta introdução ajude a entender como herança funciona! Boa sorte!</p>
+        <div class="text-center mt-8">
+            <a href="javascript:void(0);" onclick="showChallenge()" class="challenge-link-button">Próximo Desafio!</a>
+        </div>
+
+        <p class="text-center mt-8 text-gray-400 italic">Espero que esta introdução ajude a entender como herança funciona! Clique no botão para o desafio final!</p>
     </div>
 
-</body>
-</html>
+    <!-- Seção do Desafio Final -->
+    <div class="slide-container" id="challenge-section" style="display:none;">
+        <h1 classe="texto-centro fonte-negrito mb-4">O Desafio Final</h1>
+        <p classe="text-center text-sm itálico mb-8">Agora é a hora de mostrar o que você precisa.</p>
+
+        <h2 classe="fonte-semibold mb-2">Crie suas aulas prioritárias!</h2>
+        <p>O objetivo é criar uma classe <código>Pessoa</código> e uma classe <código>Programador</código>. . . . Uma classe <código>Programador</code> deve herdar da classe <code>Pessoa</code>.</p>
+        <p>Uma classe <código>Pessoa</código> desenvolver como propriedades <código>nome</código> e <código>idade</código>, e um método para se apresentar. Uma classe <code>Programador</code> deve ter uma propriedade adicional, <code>linguagem</code>, e um método para maisrar qual linguagem ela sabe programar, além de herdar os atributos e métodos da classe pai.</p>
+        <p>Preencha o código baixo para provar que você domina o conceito de herança em PHP do zero.</p>
+        
+        <pré><código classe="linguagem-php">&lt;?php
+
+// Classe mãe
+classe Pessoa {
+ // Propriedades e métodos aqui
+}
+
+// Classe filha que herda de Pessoa
+classe Programador estende Pessoa {
+ // Propriedades e métodos aqui
+}
+
+// Crie uma nova instância de Programador
+// Chame os métodos para testar seu código
+
+?&gt;</código></pré>
+
+        <p classe="text-center mt-8 text-gray-400 itálico">Quando terminar, você terá provado que pode escrever código com herança!</p>
+
+        <dividir classe="centro de texto mt-8">
+            <a href="javascript:void(0);" clicar em="mostrarLição()" classe="botão traseiro">Voltar ao slide anterior</a>
+        </dividir>
+    </dividir>
+
+    <roteiro>
+ função maisrarDesafio() {
+ documento.obterElementoPorId('seção de aula').estilo.exibir = 'nenhum';
+ documento.obterElementoPorId('seção de desempenho').estilo.exibir = 'bloco';
+        }
+
+ função maisrarLição() {
+ documento.obterElementoPorId('seção de aula').estilo.exibir = 'bloco';
+ documento.obterElementoPorId('seção de desempenho').estilo.exibir = 'nenhum';
+        }
+    </roteiro>
+
+</corpo>
+</HTML>
