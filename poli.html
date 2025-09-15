@@ -1,0 +1,240 @@
+<<!DOCTYPE html>
+<língua html="pt-br">
+<cabeça>
+ <meta conjunto de caracteres="UTF-8">
+ <meta "janela de visualização" conteúdo="largura=largura do dispositivo, escala inicial=1,0">
+ <title>Programação Orientada a Objetos</title></title>
+ <script src=<script src="https://cdn.tailwindcss.com"></roteiro>>
+ <estilo><style>
+ @import url(import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'));
+ corpo {
+            font-family: família de fontes: 'Inter', sans-serif;, sans-serif;
+            background-color: cor de fundo: #f3f4f6;;
+        }
+ </estilo>
+</cabeça>
+<corpo classe="bg-cinza-100 texto-cinza-800">
+
+    <div classe="contêiner mx-auto p-4 md:p-8">
+
+ <!-- Título -->
+ <cabeçalho classe="centro de texto my-8">
+ <h1 classe="texto-4xl md:texto-5xl lg:texto-6xl fonte-extranegrito texto-cinza-900 guia-apertado rastreamento em toda a extensão">Programação Orientada a Objetos</h1></h1>
+ </cabeçalho>
+
+ <!-- Seções de Conteúdo -->do -->
+ <principal class="space-y-12">
+            
+ <!-- Seção de Herança - Conceito -->
+ <seção class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+ <h2 class="text-3xl font-bold text-indigo-600 mb-4">Herança - Conceito</h2>
+                <div class="text-lg text-gray-700 leading-relaxed">
+ <p class="mb-4">
+ A herança é um dos pilares da Programação Orientada a Objetos (POO). Em PHP, ela permite que uma classe (chamada de classe filha ou subclasse) herde (POO). Em PHP, ela permite que uma classe (chamada de classe filha ou subclasse) herde  propriedades e métodos de outra classe (conhecida como classe pai ou superclasse). Pense nisso como uma árvore genealógica: a classe filha classe (conhecida como classe pai ou superclasse). Pense nisso como uma árvore genealógica: a classe filha "herda" as características da classe pai, mas também pode ter suas próprias características exclusivas.
+ </p></p>
+ <p <p class="mb-4">
+ Uma grande importância da herança é uma reutilização de código. Em vez de reescrever importância da herança é a reutilização de código. Em vez de reescrever as mesmas propriedades e métodos em classes diferentes, você pode definir uma classe pai com o comportamento comum e fazer com que  classes filhas herdem esse comportamento. Isso torna o código mais prático, fácil de manter e mais organizado, pois evita a duplicação e garante que Isso torna o código mais prático, fácil de manter e mais organizado, pois evita a duplicação e garante que as mudanças em um local se propaguem para todas as classes filhas.
+ </p>
+ <p classe="mb-4">
+ Outro forma de Entrante a herança é pensar não relação "É um(a)". . . Por exemplo, hum Fornecedor é hum(a) Funcionário(a), e hum Caixa também é hum(a) Funcionário(a). Essa relação hierárquica ajuda a modelar o mundo real de forma mais intuitiva e eficiente. Ao usar a herança, o seu código se torna mais claro, mais fácil de ler e de dar manutenção, porque Por exemplo, um Vendedor é um(a) Funcionário(a), e um Caixa também é um(a) Funcionário(a). Essa relação hierárquica ajuda a modelar o mundo real de forma mais intuitiva e eficiente. Ao usar a herança, o seu código se torna mais claro, mais fácil de ler e de dar manutenção, porque  funções comuns ficam em um só lugar. Por exemplo, se você precisar mudar a forma como o nome de um funcionário é processado, basta alterar o código na classe pai, e a mudança valerá para Vendedor e Caixa automaticamente.
+ </p>
+ <p classe="mb-4">
+ A herança não se trata de apenas de copiar e colar, mas de chorar uma estrutura inteligente sobre "não se repita" (ou SECO - Vestir'T Repita-se).
+ </p>
+ </
+ </seção>
+            
+ <!-- Seção de Exemplo - Herança -->
+ <sessão classe="bg-branco arredondado-xl sombra-lg p-6 md:p-8">
+ <h2 classe="texto-3xl fonte-negrito texto-índigo-600 mb-4">Exemplo de Herança</h2>
+                
+                <dividir classe="mb-6">
+                    <h3 classe="texto-2xl fonte-semibold texto-cinza-900 mb-2">Código</h3>
+                    <pré classe="bg-cinza-800 texto-verde-400 p-4 md:p-6 arredondado-lg estouro-x-auto texto-sm md:base-de-texto"><código>&é;?php
+
+classe Funcionário {
+    público $nome;
+    público $salário;
+
+    público função __construir($nome, $salário) {
+        $isso->nome = $nome;
+        $isso->salário = $salário;
+    }
+
+    público função apresentar() {
+        retornar "Olá, sou o(a) {$this->nome} e meu salário é R$ {$this->salario}.";
+    }
+}
+
+classe Fornecedor estende Funcionário {
+    público $comissao;
+
+    público função __construir($nome, $salário, $comissao) {
+        pai::__construir($nome, $salário);
+        $isso->comissão = $comissao;
+    }
+
+    público função calculularSalarioTotal() {
+        retornar $isso->salário + $isso->comissão;
+    }
+}
+
+classe Caixa estende Funcionário {
+    público $bônus;
+
+    público função __construir($nome, $salário, $bônus) {
+        pai::__construir($nome, $salário);
+        $isso->bônus = $bônus;
+    }
+
+    público função calculularSalarioTotal() {
+        retornar $isso->salário + $isso->bônus;
+    }
+}
+
+$vendedor1 = novo Fornecedor("Carlos", 2500, 500);
+eco $vendedor1->apresentar() . "&lt;br&gt;";
+eco "Salário total do vendedor: R$" . $vendedor1->calculularSalarioTotal() . "&lt;br&gt;";
+
+$caixa1 = novo Caixa("Ana", 1800, 200);
+eco $caixa1->apresentar() . "&lt;br&gt;";
+eco "Salário total da caixa: R$" . $caixa1->calculularSalarioTotal() . "&lt;br&gt;";
+
+?&gt;</código></pré>
+                </dividir>
+
+                <dividir>
+                    <h3 classe="texto-2xl fonte-semibold texto-cinza-900 mb-2">Glossário</h3>
+                    <div class="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`&lt;?php`</span>: Abre o bloco de código PHP.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`class Funcionario`</span>: Declara a classe principal, `Funcionario`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`public $nome;`</span> e <span class="font-bold text-gray-900">`public $salario;`</span>: Declaram as propriedades públicas da classe.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`public function __construct(...)`</span>: O método construtor. É executado automaticamente quando um novo objeto é criado.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`$this->nome = $nome;`</span>: Atribui o valor do parâmetro `$nome` à propriedade `nome` do objeto atual.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`public function apresentar()`</span>: Declara um método público que retorna uma string de apresentação.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`class Vendedor extends Funcionario`</span>: Declara a classe `Vendedor` que herda de `Funcionario`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`parent::__construct(...)`</span>: Chama o construtor da classe pai (`Funcionario`).
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`class Caixa extends Funcionario`</span>: Declara a classe `Caixa` que herda de `Funcionario`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`$vendedor1 = new Vendedor(...)`</span>: Cria um novo objeto da classe `Vendedor`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`echo $vendedor1->apresentar();`</span>: Chama o método `apresentar` do objeto `$vendedor1` e exibe o resultado.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`&lt;br&gt;`</span>: Tag HTML para quebra de linha.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`?&gt;`</span>: Fecha o bloco de código PHP.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Polimorfismo - Conceito -->
+            <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-indigo-600 mb-4">Polimorfismo - Conceito</h2>
+                <div class="text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">
+                        O polimorfismo é o terceiro pilar da Programação Orientada a Objetos e significa, literalmente, "muitas formas". Em PHP, ele permite que objetos de diferentes classes sejam tratados de forma uniforme através de uma interface comum ou de uma classe pai. A ideia principal é que você pode ter um único método ou função que se comporta de maneira diferente, dependendo do tipo de objeto que o está chamando.
+                    </p>
+                    <p class="mb-4">
+                        A prática do polimorfismo simplifica muito o código. Em vez de escrever código condicional (como `if/else`) para verificar o tipo de cada objeto e chamar um método específico para ele, você pode escrever uma função genérica que espera uma classe pai ou uma interface. Assim, quando você passa um objeto filho para essa função, a versão correta do método é executada automaticamente. Isso torna seu código mais flexível, escalável e fácil de ler, pois a lógica de tomada de decisão é delegada aos próprios objetos.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Seção de Exemplo - Polimorfismo -->
+            <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-indigo-600 mb-4">Exemplo de Polimorfismo</h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Código</h3>
+                    <pre class="bg-gray-800 text-green-400 p-4 md:p-6 rounded-lg overflow-x-auto text-sm md:text-base"><code>&lt;?php
+
+interface Animal {
+    public function emitirSom();
+}
+
+class Cachorro implements Animal {
+    public function emitirSom() {
+        return "Au Au!";
+    }
+}
+
+class Gato implements Animal {
+    public function emitirSom() {
+        return "Miau!";
+    }
+}
+
+class Pato implements Animal {
+    public function emitirSom() {
+        return "Quack Quack!";
+    }
+}
+
+diversidade 
+ retornar $animal->emitir
+}
+
+$cachorro = novo 
+$gato = novo 
+$pato = novo 
+
+ecológico "Ó cacho faz: 
+ecológico 
+ecológico 
+
+?&gt;</código></pré>
+ </dividir>
+                
+ <dividir>
+ <classe h3=
+ <dividir classe=
+ <dividir classe=
+ <extensão classe=
+ </dividir>
+ <dividir classe="bg-cinza-50 arredondado-lg p-4">
+ <extensão classe=
+ </dividir>
+ <dividir classe=
+ <extensão classe=
+ </dividir>
+ <dividir classe=
+ <extensão classe=
+ </dividir>
+ <dividir classe=
+ <extensão classe=>`retornar $animal->
+ </dividir>
+ <dividir classe="bg-cinza-50 redondo-lg p-4">
+ <extensão classe="fonte-negrito texto-cinza-900">`$cachorro = novo Cachorro();`</span>: Cria uma nova instância da classe `Cachorro`.
+ </dividir>
+ <dividir classe=
+ <extensão classe=
+ </dividir>
+ </dividir>
+ </dividir>
+ </seção>
+ </principal>
+ </dividir>
+</corpo>
+</html>
