@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<HTML língua="pt-br">
-<cabeça>
-    <meta conjunto de caracteres="UTF-8">
-    <meta nome="janela de visualização" conteúdo="largura=largura do dispositivo, escala inicial=1,0">
-    <título>Programação Orientada a Objetos</título>
-    <roteiro fonte="https://cdn.tailwindcss.com"></roteiro>
-    <estilo>
-        @importar url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        corpo {
-            família de fontes: 'Inter', sem serifa;
-            cor de fundo: #f3f4f6;
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Orientada a Objetos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
         }
-    </estilo>
-</cabeça>
-<corpo classe="bg-cinza-100 texto-cinza-800">
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
-    <dividir classe="contêiner mx-auto p-4 md:p-8">
+    <div class="container mx-auto p-4 md:p-8">
 
-        <!-- Título -->
-        <cabeçalho classe="centro de texto my-8">
-            <h1 classe="texto-4xl md:texto-5xl lg:texto-6xl fonte-extranegrito texto-cinza-900 guia-firme rastreamento em toda a extensão">Programação Orientada a Objetos</h1>
-        </cabeçalho>
+        <!-- Titulo -->
+        <header class="text-center my-8">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-wide">Programação Orientada a Objetos</h1>
+        </header>
 
         <!-- Seções de Conteúdo -->
-        <principal classe="espaço-y-12">
+        <main class="space-y-12">
             
             <!-- Seção de Herança - Conceito -->
-            <seção classe="bg-branco arredondado-xl sombra-lg p-6 md:p-8">
-                <h2 classe="texto-3xl fonte-negrito texto-índigo-600 mb-4">Herança - Conceito</h2>
-                <dividir classe="texto-lg texto-cinza-700 líder-relaxado">
-                    <p classe="mb-4">
- A herança é um dos pilares da Programação Orientada a Objetos (POO). Em PHP, ela permite que uma classe (chamada de classe filha ou subclasse) herde as propriedades e métodos de outra classe (conhecida como classe pai ou superclasse). Pense aqui como uma árvore genealógica: a classe filha "herda" como características da classe pai, mas também pode ter suas características exclusivas.
+            <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-indigo-600 mb-4">Herança - Conceito</h2>
+                <div class="text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">
+                        A herança é um dos pilares da Programação Orientada a Objetos (POO). Em PHP, ela permite que uma classe (chamada de classe filha ou subclasse) herde as propriedades e métodos de outra classe (conhecida como classe pai ou superclasse). Pense nisso como uma árvore genealógica: a classe filha "herda" as características da classe pai, mas também pode ter suas próprias características exclusivas.
                     </p>
-                    <p classe="mb-4">
- Uma grande importância da herança é uma reutilização de código. Em vez de reescrever como mensagens propriadas e métodos em classes diferentes, você pode definir uma classe pai com o comportamento comum e fazer com que as classes filhas herdem esse comportamento. Isso tornou o código mais prático, fácil de manter e mais organizado, pois evita a duplicação e garante que as mudanças em um local se propaguem para todas as classes filhas.
+                    <p class="mb-4">
+                        A grande importância da herança é a reutilização de código. Em vez de reescrever as mesmas propriedades e métodos em classes diferentes, você pode definir uma classe pai com o comportamento comum e fazer com que as classes filhas herdem esse comportamento. Isso torna o código mais prático, fácil de manter e mais organizado, pois evita a duplicação e garante que as mudanças em um local se propaguem para todas as classes filhas.
                     </p>
-                </dividir>
-            </seção>
+                </div>
+            </section>
             
             <!-- Seção de Exemplo -->
-            <seção classe="bg-branco arredondado-xl sombra-lg p-6 md:p-8">
-                <h2 classe="texto-3xl fonte-negrito texto-índigo-600 mb-4">Exemplo</h2>
+            <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-indigo-600 mb-4">Exemplo</h2>
                 
-                <dividir classe="mb-6">
-                    <h3 classe="texto-2xl fonte-semibold texto-cinza-900 mb-2">Código</h3>
-                    <pré classe="bg-cinza-800 texto-verde-400 p-4 md:p-6 arredondado-lg estouro-x-auto texto-sm md:base-de-texto"><código>&lt;?php
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Código</h3>
+                    <pre class="bg-gray-800 text-green-400 p-4 md:p-6 rounded-lg overflow-x-auto text-sm md:text-base"><code>&lt;?php
 
-classe Funcionário {
- nome público $;
- $salário público;
+class Funcionario {
+    public $nome;
+    public $salario;
 
     public function __construct($nome, $salario) {
         $this->nome = $nome;
@@ -117,50 +117,50 @@ echo "Salário total da caixa: R$ " . $caixa1->calcularSalarioTotal() . "&lt;br&
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4">
                             <span class="font-bold text-gray-900">`public function apresentar()`</span>: Declara um método público que retorna uma string de apresentação.
- </dividir>
-                        <dividir classe="bg-cinza-50 redondo-lg p-4">
-                            <extensão classe="fonte-negrito texto-cinza-900">`classe Vendedor estende Funcionario`</extensão>: Declara a classe `Vendedor` que herda de `Funcionário`.
-Programação Orientada a Objetos</dividir>
-Herança - Conceito<dividir classe="bg-cinza-50 redondo-lg p-4">
-A herança é um dos pilares da Programação Orientada a Objetos (POO). Em PHP, ela permite que uma classe (chamada de classe filha ou subclasse) herde as propriedades e métodos de outra classe (conhecida como classe pai ou superclasse). Pense nisso como uma árvore genealógica: a classe filha "herda" <spancomo características da classe pai, mas também pode ter suas características exclusivas.class="font-bold text-gray-900">`pai::__construir(...)`</span>: Chama o construtor da classe pai (`Funcionário`).
-                        </dividir>
-Uma grande importância da herança é uma reutilização de código. Em vez de reescrever como mensagens profissionais e métodos em classes diferentes, você pode definir uma classe pai com o comportamento comum e fazer com que as classes filhas herdem esse comportamento. Isso também o código mais prático, fácil de manter e mais organizado, pois evita a duplicação e garantia que as mudanças em um local se propagam para todas as classes filhas.<div class="bg-gray-50 rounded-lg p-4">
-                            <extensão classe="fonte-negrito texto-cinza-900">`classe Caixa estende Funcionário`</extensão>: Declara a classe `Caixa` que herda de `Funcionario`.
-Exemplo</dividir>
-Código<dividir classe="bg-cinza-50 redondo-lg p-4">
- <?classe Phpspan="fonte em negrito texto-cinza-900">`$vendor1 = novo Vendor(...)`</extensão>: Cria um novo objeto da classe `Vendedor`.
-                        </dividir>
- classe Funcionário {div class="bg-gray-50 rounded-lg p-4">
- nome público $;span class="font-bold text-gray-900">`echo $vendor1->apresentar();`</extensão>: Chama o método `apresentar` do objeto `$vendedor1` e exibe o resultado.
- $salário público;div>
-                        <dividir classe="bg-cinza-50 redondo-lg p-4">
- função pública __construct($nome, $salario) {span class="font-bold text-gray-900">`&lt;br&gt;`</extensão>: Tag HTML para quebra de linha.
- $this->nome = $nome;div>
- $this->salario = $salario;div class="bg-gray-50 rounded-lg p-4">
-                            <extensão classe="fonte-negrito texto-cinza-900">`?&gt;`</extensão>: Fecha o bloco de código PHP.
-                        </dividir>
- função pública apresentar() {div>
- retornar "Olá, sou o(a) {$this->nome} e meu salário é R$ {$this->salario}.";div>
- </seção>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`class Vendedor extends Funcionario`</span>: Declara a classe `Vendedor` que herda de `Funcionario`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`parent::__construct(...)`</span>: Chama o construtor da classe pai (`Funcionario`).
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`class Caixa extends Funcionario`</span>: Declara a classe `Caixa` que herda de `Funcionario`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`$vendedor1 = new Vendedor(...)`</span>: Cria um novo objeto da classe `Vendedor`.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`echo $vendedor1->apresentar();`</span>: Chama o método `apresentar` do objeto `$vendedor1` e exibe o resultado.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`&lt;br&gt;`</span>: Tag HTML para quebra de linha.
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <span class="font-bold text-gray-900">`?&gt;`</span>: Fecha o bloco de código PHP.
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Seção de Desafio -->
- classe Vendedor estende Funcionario {section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
- público $comissao;h2 class="text-3xl font-bold text-indigo-600 mb-4">Desafio</h2>
-                <dividir classe="texto-lg texto-cinza-700 líder-relaxado">
- função pública __construct($nome, $salario, $comissao) {p class="mb-4">
- Crie uma hierarquia de classes em PHP para representar uma escola. A classe pai deve ser pai::__construct($nome, $salario);span class="font-semibold">Pessoa</span>, com as propriedades <span class="font-semibold">nome</span> e <span class="font-semibold">idade</span>. . . Crie duas classes filhas, <span class="font-semibold">Aluno</span> e <span class="font-semibold">Professor</span>, que herdam de <span class="font-semibold">Pessoa</span>.
- $this->comissao = $comissao;p>
-                    <p classe="mb-4">
- Uma classe <extensão classe="fonte-semibold">Aluno</extensão> deve ter uma propriedade adicional chamada <extensão classe="fonte-semibold">matricula</span>, e uma classe <span class="font-semibold">Professor</span> desenvolver uma propriedade <span class="font-semibold">disciplina</span>.
- função pública calcularSalarioTotal() {p>
- retornar $this->salario + $this->comissao;p>
- Implementar um método na classe <extensão classe="fonte-semibold">Aluno</extensão> que impressão "O aluno X tem Y anos e a matrícula Z.", e na classe <span class="font-semibold">Professor</span> que impressão "Ó professor X, de Y anos, leciona a disciplina Z.".
+            <section class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-indigo-600 mb-4">Desafio</h2>
+                <div class="text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">
+                        Crie uma hierarquia de classes em PHP para representar uma escola. A classe pai deve ser <span class="font-semibold">Pessoa</span>, com as propriedades <span class="font-semibold">nome</span> e <span class="font-semibold">idade</span>. Crie duas classes filhas, <span class="font-semibold">Aluno</span> e <span class="font-semibold">Professor</span>, que herdam de <span class="font-semibold">Pessoa</span>.
                     </p>
-                </dividir>
- </seção>
- </principal>
+                    <p class="mb-4">
+                        A classe <span class="font-semibold">Aluno</span> deve ter uma propriedade adicional chamada <span class="font-semibold">matricula</span>, e a classe <span class="font-semibold">Professor</span> deve ter a propriedade <span class="font-semibold">disciplina</span>.
+                    </p>
+                    <p>
+                        Implemente um método na classe <span class="font-semibold">Aluno</span> que imprima "O aluno X tem Y anos e a matrícula Z.", e na classe <span class="font-semibold">Professor</span> que imprima "O professor X, de Y anos, leciona a disciplina Z.".
+                    </p>
+                </div>
+            </section>
+        </main>
 
- </dividir>
+    </div>
 
-</corpo>
+</body>
 </html>
