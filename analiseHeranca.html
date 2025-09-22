@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Código - Herança</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Titulo -->
+        <header class="text-center my-8">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-wide">Análise de Código</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mt-2">Herança - Laboratório</p>
+        </header>
+
+        <main class="flex flex-col lg:flex-row gap-8">
+
+            <!-- Seção de Carrossel de Código -->
+            <div class="lg:w-2/3 bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-4">Código do Aluno</h2>
+                
+                <!-- Carrossel -->
+                <div id="code-carousel" class="relative">
+                    
+                    <!-- Código 1 -->
+                    <div class="carousel-item">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+class Pessoa {
+    protected $nome;
+    protected $idade;
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+}
+
+class Aluno extends Pessoa {
+    private $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+
+    public function apresentar() {
+        echo "O aluno(a) {$this->nome} tem {$this->idade} anos e a matrícula {$this->matricula}.";
+    }
+}
+class Professor extends Pessoa {
+    private $materia;
+
+    public function __construct($nome, $idade, $materia) {
+        parent::__construct($nome, $idade);
+        $this->materia = $materia;
+    }
+
+    public function apresentar() {
+        echo "O professor {$this->nome}, de {$this->idade} anos, da a aula de {$this->materia}.";
+    }
+}
+
+$aluno = new Aluno("Mykaella", 18, "A01234");
+$professor = new Professor("Gabriel", 25, "Educação Física");
+
+$aluno->apresentar();
+echo "&lt;br>";
+$professor->apresentar();
+?>
+                        </code></pre>
+                    </div>
+
+                    <!-- Código 2 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+class Pessoa {
+   
+    private $nome;
+    private $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+    public function apresentar() {
+        return "Olá, sou o(a) {$this->nome} e meu salário é R$ {$this->salario}.";
+    }
+   
+    class Aluno extends Pessoa {
+    public $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+    }
+    class Professor extends Pessoa {
+    public $disciplina;
+
+    public function __construct($nome, $idade, $disciplina) {
+        parent::__construct($nome, $idade);
+        $this->disciplina = $disciplina;
+    }
+}
+}
+$aluno1 = new Aluno("Carlos");
+echo $aluno1->apresentar() . "&lt;br>";
+echo "O Aluno {$this->aluno} tem {$this->matricula}" . "&lt;br>";
+
+$professor1 = new Professor("João");
+echo $professor1->apresentar() . "&lt;br>";
+echo "O Professor {$this->professor} tem {$this->anos} e leciona a disciplina {$this->disciplina}" . "&lt;br>";
+?>
+                        </code></pre>
+                    </div>
+
+                    <!-- Código 3 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+// essa é a classe pai
+class Pessoa {
+    protected $nome;
+    protected $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+}
+
+// essa é a classe aluno herda de pessoa
+class Aluno extends Pessoa {
+    private $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+
+    public function apresentar() {
+        echo "O(a) aluno(a) {$this->nome} tem {$this->idade} anos e a matrícula {$this->matricula}.";
+    }
+}
+
+// essa é a classe professor herda de pessoa
+class Professor extends Pessoa {
+    private $materia;
+
+    public function __construct($nome, $idade, $materia) {
+        parent::__construct($nome, $idade);
+        $this-> materia = $materia;
+    }
+
+    public function apresentar() {
+        echo "O(a) professor(a) {$this->nome}, de {$this->idade} anos, dando aula de  {$this->materia}.";
+    }
+}
+
+//exemplo
+$aluno = new Aluno("Mykaella", 18, "A01234");
+$professor = new Professor("Gabriel", 25, " Física");
+
+$aluno->apresentar();
+echo "&lt;br>";
+$professor->apresentar();
+?>
+                        </code></pre>
+                    </div>
+                    
+                    <!-- Código 4 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+
+class Pessoa {
+    public $nome;
+    public $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+}
+
+class Aluna extends Pessoa {
+    public $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+
+    public function apresentar() {
+        return "A aluna {$this->nome} tem {$this->idade} anos e a matrícula é {$this->matricula}.";
+    }
+}
+
+class Professor extends Pessoa {
+    public $disciplina;
+
+    public function __construct($nome, $idade, $disciplina) {
+        parent::__construct($nome, $idade);
+        $this->disciplina = $disciplina;
+    }
+
+    public function apresentar() {
+        return "O(a) professor(a) {$this->nome}, de {$this->idade} anos, leciona a disciplina {$this->disciplina}.";
+    }
+}
+
+// Criando objetos
+$aluna1 = new Aluna("Amanda", 18, "5421397");
+echo $aluna1->apresentar() . "&lt;br>";
+
+$professor1 = new Professor("Carol", 35, "Ciências");
+echo $professor1->apresentar() . "&lt;br>";
+
+?>
+                        </code></pre>
+                    </div>
+
+                    <!-- Código 5 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+
+class Pessoa {
+    public $nome;
+    public $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+}
+
+class Aluna extends Pessoa {
+    public $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+
+    public function apresentar() {
+        return "A aluna  {$this->nome} tem {$this->idade} anos e a matrícula {$this->matricula}.";
+    }
+}
+
+class Professor extends Pessoa {
+    public $disciplina;
+
+    public function __construct($nome, $idade, $disciplina) {
+        parent::__construct($nome, $idade);
+        $this->disciplina = $disciplina;
+    }
+
+    public function apresentar() {
+        return "O professor {$this->nome}, de {$this->idade} anos, leciona a disciplina {$this->disciplina}.";
+    }
+}
+
+
+$aluna1 = new Aluna("Luiza", 17, "B4738960");
+echo $aluna1->apresentar() . "&lt;br>";
+
+$professor1 = new Professor("Valdiney", 40, "História");
+echo $professor1->apresentar() . "&lt;br>";
+?>
+                        </code></pre>
+                    </div>
+                    
+                    <!-- Código 6 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+
+class Pessoa {
+    public $nome;
+    public $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+
+    public function apresentar() {
+        return "A aluna {$this->nome} tem {$this->idade} anos e a matrícula {$this->matricula}.";
+    }
+}
+
+class Aluna extends Pessoa {
+    public $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+
+    public function apresentar() {
+        return "A aluna {$this->nome} tem {$this->idade} anos e a matrícula {$this->matricula}.";
+    }
+}
+
+class Professor extends Pessoa {
+    public $disciplina;
+
+    public function __construct($nome, $idade, $disciplina) {
+        parent::__construct($nome, $idade);
+        $this->disciplina = $disciplina;
+    }
+
+    public function apresentar() {
+        return "O professor {$this->nome}, de {$this->idade} anos, leciona a disciplina {$this->disciplina}.";
+    }
+}
+
+// Criando objetos
+$aluna1 = new Aluna("kesylen", 18, "A210562");
+echo $aluna1->apresentar() . "&lt;br>";
+
+$professor1 = new Professor("warlen", 40, "química");
+echo $professor1->apresentar() . "&lt;br>";
+?>
+                        </code></pre>
+                    </div>
+                    
+                    <!-- Código 7 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+
+class Pessoa {
+    protected $nome;
+    protected $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+}
+
+
+class Aluno extends Pessoa {
+    private $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+
+    public function apresentar() {
+        echo "O aluno {$this->nome} tem {$this->idade} anos e a matrícula {$this->matricula}.&lt;br>";
+    }
+}
+
+
+class Professor extends Pessoa {
+    private $disciplina;
+
+    public function __construct($nome, $idade, $disciplina) {
+        parent::__construct($nome, $idade);
+        $this->disciplina = $disciplina;
+    }
+
+    public function apresentar() {
+        echo "O professor {$this->nome}, de {$this->idade} anos, leciona a disciplina {$this->disciplina}.&lt;br>";
+    }
+}
+
+
+$aluno1 = new Aluno("João", 16, "A12345");
+$professor1 = new Professor("Carlos", 40, "Matemática");
+
+$aluno1->apresentar();
+$professor1->apresentar();
+?>
+                        </code></pre>
+                    </div>
+
+                    <!-- Código 8 -->
+                    <div class="carousel-item hidden">
+                        <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;?php
+
+class Pessoa {
+    public $nome;
+    public $idade;
+
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
+    }
+
+    public function apresentar() {
+        return "Olá, sou o(a) {$this->nome} e tenho {$this->idade} anos.";
+    }
+}
+
+class Aluno extends Pessoa {
+    public $matricula;
+
+    public function __construct($nome, $idade, $matricula) {
+        parent::__construct($nome, $idade);
+        $this->matricula = $matricula;
+    }
+}
+
+class Professor extends Pessoa {
+    public $disciplina;
+
+    public function __construct($nome, $idade, $disciplina) {
+        parent::__construct($nome, $idade);
+        $this->disciplina = $disciplina;
+    }
+}
+?>
+                        </code></pre>
+                    </div>
+
+                </div>
+
+                <!-- Botões de Navegação -->
+                <div class="flex justify-between mt-4">
+                    <button id="prevBtn" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-600 transition-colors duration-300">&lt; Anterior</button>
+                    <button id="nextBtn" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-600 transition-colors duration-300">Próximo &gt;</button>
+                </div>
+
+            </div>
+
+            <!-- Seção de Glossário e Correções -->
+            <div class="lg:w-1/3 bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-4">Glossário e Correções</h2>
+                
+                <div id="info-section">
+                    <!-- Conteúdo dinâmico -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        const carousel = document.getElementById('code-carousel');
+        const infoSection = document.getElementById('info-section');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+
+        // Dados para cada slide
+        const contentData = [
+            {
+                title: "Exemplo 1: Herança Simples e Sobrescrita",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Herança (<span class="font-mono">extends</span>):</strong> Um mecanismo que permite que uma nova classe (filha) herde as propriedades e métodos de uma classe existente (pai).</li>
+                        <li><strong><span class="font-mono">__construct</span>:</strong> O método construtor da classe. É chamado automaticamente quando um objeto é criado.</li>
+                        <li><strong><span class="font-mono">parent::</span>:</strong> Usado para chamar um método ou construtor da classe pai.</li>
+                        <li><strong>Sobrescrita (<span class="font-mono">Override</span>):</strong> Quando a classe filha redefine um método que já existe na classe pai.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">O código está bem estruturado. Uma possível melhoria seria usar o <strong><span class="font-mono">final</span></strong> na classe `Veiculo` para evitar que classes filhas mudem seu comportamento, ou o <strong><span class="font-mono">protected</span></strong> para encapsular o acesso a algumas propriedades.
+                    </p>
+                `
+            },
+            {
+                title: "Exemplo 2: Estrutura Aninhada",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Classes Aninhadas:</strong> Classes definidas dentro de outras classes. Em PHP, isso pode gerar confusão e não é uma prática comum ou recomendada.</li>
+                        <li><strong>Escopo de Variável:</strong> Onde uma variável pode ser acessada. A forma como as variáveis são chamadas (`$this->aluno`) no escopo global está incorreta, pois elas só existem dentro do objeto.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li>O código mistura a definição de classes com a execução do código no mesmo arquivo, o que dificulta a organização.</li>
+                        <li>As classes `Aluno` e `Professor` foram aninhadas dentro da classe `Pessoa`. A prática correta é definir cada classe no nível superior, como nos outros exemplos.</li>
+                        <li>O método `apresentar()` da classe `Pessoa` tenta acessar a variável `$this->salario` que não existe, o que causará um erro.</li>
+                        <li>A forma como os objetos são instanciados e as variáveis são acessadas (`$this->aluno`) está incorreta e gerará erros de referência.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Exemplo 3: Herança com 'private'",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Visibilidade (<span class="font-mono">private</span>):</strong> Define que uma propriedade ou método só pode ser acessado dentro da mesma classe em que foi declarado. A classe filha não pode acessá-la diretamente.</li>
+                        <li><strong>Comentários:</strong> Uma boa prática para descrever o propósito do código, como as classes.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">O código está bem estruturado e organizado. A única melhoria a se fazer é utilizar `protected` na classe `Pessoa` para que as classes filhas (Aluno e Professor) possam herdar os atributos, da forma que está o código vai funcionar, mas não está usando de fato os conceitos da Herança. O uso de comentários também é ótimo para a legibilidade do código.
+                    </p>
+                `
+            },
+            {
+                title: "Exemplo 4: Boa Prática com Herança",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Herança:</strong> Mecanismo de reuso de código onde uma classe herda as características da outra.</li>
+                        <li><strong>Classes Filhas:</strong> `Aluna` e `Professor`.</li>
+                        <li><strong>Classes Pais:</strong> `Pessoa`.</li>
+                        <li><strong>Retorno de Função (<span class="font-mono">return</span>):</strong> Em vez de imprimir diretamente, o método `apresentar()` retorna uma string que pode ser usada em outras partes do código. Isso é uma ótima prática de design.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">Este é um exemplo excelente de herança e boas práticas. Os nomes das classes e variáveis são claros, e o uso de <span class="font-mono">return</span> no método `apresentar()` é uma prática recomendada para desacoplar a lógica de apresentação da lógica da classe.
+                    </p>
+                `
+            },
+            {
+                title: "Exemplo 5: Código Funcional e Legível",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Herança:</strong> Assim como nos outros exemplos, a classe `Aluna` e `Professor` herdam de `Pessoa`.</li>
+                        <li><strong>Visibilidade (<span class="font-mono">public</span>):</strong> As propriedades são públicas, o que significa que podem ser acessadas de qualquer lugar. Embora funcional, é uma boa prática usar `protected` para manter o encapsulamento.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">O código é funcional e legível, mas para reduzir linhas e evitar repetição, o método `apresentar()` da classe `Pessoa` poderia ser genérico. As classes filhas poderiam herdar e sobrescrever o método apenas para adicionar os detalhes específicos (`matrícula` e `disciplina`).</p>
+                `
+            },
+            {
+                title: "Exemplo 6: Herança e 'Return'",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Herança:</strong> As classes filhas herdam as propriedades e construtores da classe pai.</li>
+                        <li><strong>Reuso de Código:</strong> O conceito de não repetir código desnecessariamente.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">O método `apresentar()` está sendo declarado na classe `Pessoa` e nas classes filhas, o que é uma repetição desnecessária. O método `apresentar()` da classe `Pessoa` poderia ser usado por ambas as classes filhas se estivessem apenas reescrevendo o método para seus respectivos objetos.</p>
+                `
+            },
+            {
+                title: "Exemplo 7: Código Conciso e Limpo",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Herança:</strong> As classes `Aluno` e `Professor` herdam corretamente de `Pessoa`.</li>
+                        <li><strong>Visibilidade (<span class="font-mono">protected</span> e <span class="font-mono">private</span>):</strong> O uso de `protected` na classe pai e `private` nas classes filhas é uma ótima prática de **encapsulamento**, garantindo que as propriedades só sejam acessadas onde devem ser.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">Este é um exemplo claro e bem estruturado. Não há grandes correções a serem feitas, pois ele segue as boas práticas da **Programação Orientada a Objetos**. O uso de `protected` e `private` é uma boa prática.</p>
+                `
+            },
+            {
+                title: "Exemplo 8: Herança e Método na Classe Pai",
+                glossary: `
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Glossário:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                        <li><strong>Herança:</strong> As classes `Aluno` e `Professor` herdam corretamente de `Pessoa`.</li>
+                        <li><strong>Reuso de Código:</strong> O método `apresentar()` é definido apenas na classe `Pessoa`.</li>
+                    </ul>
+                `,
+                corrections: `
+                    <h3 class="text-xl font-semibold mt-4 mb-2 text-gray-900">Possíveis Correções:</h3>
+                    <p class="text-lg text-gray-700">A forma como o código foi escrito, a classe `Aluno` e `Professor` herdam o método `apresentar()` da classe `Pessoa`. Isso é uma ótima forma de reutilizar código, mas a função do método não pode ser adaptada para cada classe, fazendo com que os objetos não consigam acessar a `matrícula` ou a `disciplina`, já que não foram declaradas na classe pai.</p>
+                `
+            }
+        ];
+
+        function showSlide(index) {
+            items.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            infoSection.innerHTML = `
+                <h3 class="text-xl font-bold mb-2 text-gray-900">${contentData[index].title}</h3>
+                ${contentData[index].glossary}
+                ${contentData[index].corrections}
+            `;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
+        });
+
+        // Mostra o primeiro slide ao carregar a página
+        showSlide(currentIndex);
+    </script>
+
+</body>
+</html>
